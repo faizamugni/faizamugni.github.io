@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #232323;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("http://dash.ga.co/assets/firstcourse.jpg");
+}
+.second{
+  background-image: url("http://dash.ga.co/assets/secondcourse.jpg");
+}
+.dessert{
+  background-image: url("http://dash.ga.co/assets/dessertcourse.jpg");
+}
+.price {
+  float: right;
+}
+ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <ul>
+      <li><button onclick=appetizers()>Appetizers</button></li>
+      <li><button onclick=entrees()>entrees</button></li>
+      <li><button onclick=desserts()>desserts</button></li>
+    </ul>
+
+
+
+
+<h1>esha's restaurant</h1>
+<h2>a New York City eatery</h2>
+
+<div id="good food"> </div>
+
+<script>
+
+appetizerImages = [
+                 'url("https://4.bp.blogspot.com/-Aavd_PhIN5Y/WwXZNbiF5uI/AAAAAAAAGxg/y7yBUaamfvYV2x5xP-SFVrBUonRFWBJngCLcBGAs/s1600/shrimp%2Bpoppers%2Bhero%2Bimage%2Bwith%2Btext.jpg")',
+                'url("https://d1bjorv296jxfn.cloudfront.net/s3fs-public/styles/recipes_header_image/public/375-Roasted-Ratatouille-and-Mozzarella-Appetizers.jpg?itok=MR9hitXt")',
+                'url("https://www.soberjulie.com/wp-content/uploads/2017/10/Beef-Steak-Skewer-Appetizer-629x1024.jpg")',
+        ]
+
+appetizerDivs = [
+        '<div class="item"><p>bite size shrimp delights <span class="price">$7</span><br /><small>mild spicy guacamole and crispy shrimp on bite size nacho chips.</small></p></div>',
+        '<div class="item"><p>potato potato <span class="price">$7</span><br /><small>large well cooked potato cut in half and stuffed with spicy ground beef, tomato, potato and american cheese.</small></p></div>',
+        '<div class="item"><p>sheesh kabab <span class="price">$8</span><br /><small>crunchy and well cooked beef steak cut in small pieces and on a stick tradisional style.</small></p></div>',
+]
+
+function appetizers() {
+  goodlife = document.getElementById("good food")
+  goodlife.innerHTML = ''
+	goodlife.innerHTML += appetizerDivs[0]
+    	goodlife.innerHTML += appetizerDivs[1]
+    	goodlife.innerHTML += appetizerDivs[2]
+    //alert("dhdgdg")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = appetizerImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = appetizerImages[1]
+    items[2].style.background = appetizerImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+}
+
+entreeImages = [
+                'url("https://www.mrsdash.com/sites/default/files/entree-hot.jpg")',
+                'url("http://www.ling-ling.com/application/files/2814/9964/2937/entree-zesty-orange-potsticker-stir-fry-horiz.jpg")',
+                'url("https://www.simplyorganic.com/community/images/made/bf57b6a338206c8d/Simply-Organic-Entree-pasta-600x600_630_630_s_c1.jpg")',
+        ]
+
+entreeDivs = [
+     '<div class="item"><p>brown chicks <span class="price">$14</span><br /><small>chicken breast grilled until looks golden with mashed potato and capsicums and vegies on the side.</small></p></div>',
+        '<div class="item"><p>nom nom dumplings <span class="price">$22</span><br /><small>sweet and sour dumplings with broccoli and bellpepper.</small></p></div>',
+        '<div class="item"><p>speghatti straps <span class="price">$18</span><br /><small>long udang noodles with meat balls and tomat and silantro on top for extra flavor.</small></p></div>',
+]
+
+     
+function entrees() {
+  goodlife = document.getElementById("good food")
+  goodlife.innerHTML = ''
+	goodlife.innerHTML += entreeDivs[0]
+    	goodlife.innerHTML += entreeDivs[1]
+    	goodlife.innerHTML += entreeDivs[2]
+    //alert("dfhttvb")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = entreeImages[0]
+    items[1].style.background = entreeImages[1]
+    items[2].style.background = entreeImages[2]
+    items[2].style.backgroundSize = '100% 100%'
+
+} 
+
+dessertImages = [
+                'url("https://www.tasteofhome.com/wp-content/uploads/2017/10/exps21585_THCA153054D10_15_4b-1.jpg")',
+                'url("http://images.kglobalservices.com/www.kelloggs.com.au/en_au/recipe/recipe_417935/recip_img-417949_kelloggs-lemon-meringue-dessert.jpg")',
+                'url("https://i.pinimg.com/originals/0b/53/5e/0b535e2ec3f4f6330596282a164f66bf.jpg")',
+        ]
+
+dessertDivs = [
+      '<div class="item"><p>cherry pop <span class="price">$6</span><br /><small>thin buttery graham cracker in the bottom filled with thick layer of heavy rich cream cheeze filling and topped with pure cherry syrup and small bits of cherry as well.</small></p></div>',
+        '<div class="item"><p>when life gives you a lemon <span class="price">$6</span><br /><small>first layer is thin layer of nuts and graham crackers in the bottom, second layer filled with heavy creamy yogurt ice cream, third layer thick layer of lemeon sorbe topped with lots of marshmellow and caramel.</small></p></div>',
+        '<div class="item"><p>berry berry sweet <span class="price">$6</span><br /><small>sandwich looking sweet treat filled with creamy flan and lots of raspberry and thin crispy caramel crackers on both side.</small></p></div>',
+]
+
+function desserts() {
+  goodlife = document.getElementById("good food")
+  goodlife.innerHTML = ''
+	goodlife.innerHTML += dessertDivs[0]
+    	goodlife.innerHTML += dessertDivs[1]
+    	goodlife.innerHTML += dessertDivs[2]
+    //alert("baasgf")
+    items = document.getElementsByClassName("item")
+    items[0].style.background = dessertImages[0]
+    items[0].style.backgroundSize = '100% 100%'
+    items[1].style.background = dessertImages[1]
+    items[2].style.background = dessertImages[2]
+
+} 
+
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
+
 
