@@ -104,7 +104,13 @@ if (keyIsDown(DOWN_ARROW)) {
   if (dist( x, y, a, b) < 60 + 80) {
 	score = score + 1
   }
+}
+	else { 
+		x = touches[0].x
+		y = touches[0].y
+}
 
+	  
 fill(0, 128, 0)
 circle(a* s, b, 80)
   a= a+5
@@ -112,7 +118,7 @@ circle(a* s, b, 80)
 if ( a > width) {
 	a= 0
 }
-}
+
  for (i=0; i<enemy; i=i+1) {
    fill(0, 0, 255)
 circle(c[i]* s, d[i], radius)
