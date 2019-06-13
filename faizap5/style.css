@@ -8,4 +8,8 @@ html, body {
 }
 canvas {
   display: block;
+
+}
+#names, #names input, button {
+	font-size: 120%;
 }
