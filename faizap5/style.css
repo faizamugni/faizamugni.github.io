@@ -1,4 +1,8 @@
 html, body {
+  position: fixed; 
+	overflow: hidden; 
+  overscroll-behavior: none;
+
   margin: 0;
   padding: 0;
 }
