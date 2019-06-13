@@ -62,7 +62,7 @@ function draw() {
   text("score: " + score, 500, 80)
    text("level: " + level, 500, 150)
   text("time: " + time.toFixed(0), 500, 115)
-  circle(x* s, y, 60)
+
   //x= x+1
   if (score>=90 && level == 1) {
     level= 2
@@ -86,10 +86,9 @@ function draw() {
     radius=60
   }
   
-  if (dist( x, y, a, b) < 60 + 80) {
-	score = score + 1
-  }
-  
+if (touches.length == 0)   {
+
+ circle(x* s, y, 60)
 if (keyIsDown(LEFT_ARROW)) {
     x = x - 8
   }
@@ -102,6 +101,9 @@ if (keyIsDown(UP_ARROW)) {
 if (keyIsDown(DOWN_ARROW)) {
     y = y + 8
   }
+  if (dist( x, y, a, b) < 60 + 80) {
+	score = score + 1
+  }
 
 fill(0, 128, 0)
 circle(a* s, b, 80)
@@ -110,7 +112,7 @@ circle(a* s, b, 80)
 if ( a > width) {
 	a= 0
 }
-
+}
  for (i=0; i<enemy; i=i+1) {
    fill(0, 0, 255)
 circle(c[i]* s, d[i], radius)
