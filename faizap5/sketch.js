@@ -85,10 +85,14 @@ function draw() {
     enemy= enemy + 3
     radius=60
   }
-  
-if (touches.length == 0)   {
 
  circle(x* s, y, 60)
+  if (dist( x, y, a, b) < 60 + 80) {
+	score = score + 1
+  }
+	  
+	  
+if (touches.length == 0)   {
 if (keyIsDown(LEFT_ARROW)) {
     x = x - 8
   }
@@ -100,9 +104,6 @@ if (keyIsDown(UP_ARROW)) {
   }
 if (keyIsDown(DOWN_ARROW)) {
     y = y + 8
-  }
-  if (dist( x, y, a, b) < 60 + 80) {
-	score = score + 1
   }
 }
 	else { 
